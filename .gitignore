@@ -112,3 +112,5 @@ lib64
 pip-selfcheck.json
 pyvenv.cfg
 share/
+Pipfile
+include/
