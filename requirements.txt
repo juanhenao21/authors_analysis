@@ -1,0 +1,6 @@
+jupyter
+networkx==2.0
+matplotlib==2.1.0
+python-louvain==0.9
+python-igraph==0.7.1.post6
+cairocffi
