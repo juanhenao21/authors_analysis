@@ -1,0 +1,605 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Bit Patterned Media Articles &#8212; bpm_documentation 0.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Graphs Documentation" href="graphs.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bit-patterned-media-articles">
+<span id="bpm-articles"></span><h1>Bit Patterned Media Articles<a class="headerlink" href="#bit-patterned-media-articles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bit-patterned-magnetic-recording-theory-media-fabrication-and-recording-performance">
+<h2>Bit-Patterned Magnetic Recording: Theory, Media Fabrication, and Recording Performance<a class="headerlink" href="#bit-patterned-magnetic-recording-theory-media-fabrication-and-recording-performance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="abstract">
+<h3>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h3>
+<p>Bit-patterned media (BPM) for magnetic recording provides a route to thermally
+stable data recording at <span class="math">\(&gt; 1 \, \frac{Tb}{in^{2}}\)</span>.
+Instead of recording a bit on an ensemble of random grains, BPM comprises a
+well-ordered array of lithographically patterned isolated magnetic islands,
+each of which stores 1 bit.</p>
+</div>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>To maintain adequate signal-to-noise ratio (SNR) to recover
+recorded data with an acceptably low error rate, the grain sizes
+within the magnetic film generally need to scale with the size
+of the recorded bits. For a number of years, it was assumed
+that the maximum achievable density for granular media would
+be reached when scaling grains to smaller volume would
+result in the loss of thermal stability. This understanding has
+often been described as a trilemma, in which thermal stability,
+media writeability, and media SNR drive mutually exclusive
+objectives in media design. More recently, however, it
+has become apparent that even before this long-predicted
+trilemma is reached, scaling granular media properties to
+achieve sufficient SNR to support an AD of $&gt;1 Tb/in^{2}$ is
+already very challenging</p>
+<p>One concept that has been proposed to fundamentally address the shortcomings of conventional
+media is bit-patterned magnetic recording (BPMR), which achieves
+high SNR and thermal stability by replacing the random
+grains of conventional media with lithographically patterned
+magnetic islands, which are significantly larger than, and
+thereby more thermally stable than, conventional media
+grain.</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/Fig01.png"><img alt="granular media and BPM" src="_images/Fig01.png" style="width: 564.0px; height: 265.5px;" /></a>
+<p class="caption"><span class="caption-text">Comparison of a granular media (left) and BPM (right).</span></p>
+</div>
+<p>The grand challenge for BPMR, however, is the
+high-volume low-cost manufacturing of BPM with good
+magnetic properties and tight fabrication tolerances. What
+makes this challenge particularly daunting is the small feature
+size required—generally $&lt;20 nm$ full pitch ($&lt;10 nm$ feature
+size) in the down-track direction, which is beyond the capa-
+bilities of conventional lithographic methods as practiced by
+the semiconductor industry.</p>
+</div>
+<div class="section" id="bpm-data-storage-requirements">
+<h3>BPM Data Storage Requirements<a class="headerlink" href="#bpm-data-storage-requirements" title="Permalink to this headline">¶</a></h3>
+<p>On a very basic level, an HDD consists of a spinning data storage
+medium (the disk), an element that reads and writes data to
+the disk (the head), and a mechanical arm that moves the
+head around the disk (the actuator).</p>
+<p>### Sector Failures and Bit Error Rates</p>
+<p>The data loss rate is usually specified as
+an unrecoverable bit error rate (BER), which, for HDDs,
+is typically stated as less than one error in $10^{14} – 10^{16}$ bits read
+depending on the application. For the subsequent discussion,
+we will assume that bits are grouped into 4 kB sectors on the
+disk and that not recovering a single bit is equivalent to losing
+the whole sector. We will use the midrange unrecoverable
+sector failure rate (SFR) of $10^{-11}$ or one bad sector for every
+400 TB written.</p>
+<p>The read channel employs error correcting codes (ECCs) that can correct erroneous bits at
+the expense of additional storage overhead.</p>
+<p>Unrecoverable sector failures stem from four main sources:</p>
+<ol class="arabic simple">
+<li>mis-synchronization</li>
+<li>adjacent track erasure</li>
+<li>defects</li>
+<li>thermally activated reversal.</li>
+</ol>
+<p>### BPM Recording Theory and Concepts</p>
+<p><em>Effective Bit Position Jitter and Bit Error Rates</em></p>
+<p><em>Thermal Stability</em></p>
+<p>The thermally activated reversal rate depends on the bit volume $V$, the anisotropy energy density
+$K_{U}$, Boltzmann’s constant $k_{B}$ , and the drive temperature $T$. The typical way to estimate
+the rate is to use the Arrhenius switching model in which the reversal rate is given by $R = f_{0} exp(-K_{U} V /k_{B} T)$.
+Using the BER criteria of $10^{-2}$, in a SFR of $&lt;10^{-11}$ will be
+maintained after 10 years if the $K_{U} V /k_{B} T &gt; 52$. However, a population of islands will have
+a distribution of volumes and anisotropy. The thermally activated reversal rate is accelerated by
+adjacent track writing due to the presence of the residual write fields on the adjacent track.
+Residual write fields are temporary but will accumulate near tracks that are written frequently.
+Dipolar fields can also accelerate thermal decay, especially for islands in the areas of
+uniform magnetization.</p>
+<p><em>Data Track Writing Architecture</em></p>
+<p>Data can be written to the disk by</p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Centered track recording</dt>
+<dd>In centered track recording, the write head writes a single track in a single pass, without
+overwriting the adjacent tracks. Centered track recording requires a match between the physical
+dimensions of the writer and the TP.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Shingled magnetic recording</dt>
+<dd>In SMR, the writer spans several tracks and each track is written sequentially like overlapping
+shingles.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Hypertrack recording</dt>
+<dd>In HTMR, two tracks are written simultaneously using a writer than spans two tracks.</dd>
+</dl>
+</li>
+</ol>
+<p><em>BAR considerations</em></p>
+<p>—</p>
+<p>## Magnetic Material for BPM</p>
+<p>### Prepatterned Substrates Versus Etching Continuous Films</p>
+<p>The initial approach for BPM fabrication was to prepattern the substrate with pillar features, upon
+which magnetic films with perpendicular anisotropy were deposited.</p>
+<p>As lithographic and patterning techniques improved, the
+order of fabrication steps was reversed and a continuous film
+of magnetic material was deposited prior to the patterning
+steps. This greatly expanded the variety of magnetic materials
+that could be used.</p>
+<p>Regardless of which fabrication strategy is pursued, it is
+essential to include a continuous (not patterned) soft magnetic
+underlayer below the magnetic seed layer structure in order to
+close the magnetic flux from the write head and to keep the
+magnetic flux lines at the recording point more perpendicular
+to the layer structure in a manner similar to conventional
+perpendicular recording.</p>
+<p>### Magnetic Properties and Switching Field Distribution</p>
+<p>To create etched BPM, the initial films must be continuous,
+uniform, and smooth in order to be patterned into highly
+uniform magnetic islands.</p>
+<p>In practice, there can be significant
+differences in physical structure and materials properties from
+island to island, which cause variations in the switching field
+of the islands.</p>
+<p>Two distinct components
+contribute to the SFD. First, the iSFD, which is caused by
+the variations in the materials properties and microstructure
+(such as defects, grain boundaries, crystallite misorientation,
+and also different degrees of island edge damage due to
+patterning. Second, the dipolar contribution, which
+is an additional broadening that originates from different dipolar fields at each island arising from the specific magnetic state
+of nearby islands. In order to ensure that an island being
+addressed by the writer properly reverses without disturbing
+the state of its neighbors, it is important that the iSFD be kept
+as small as possible.</p>
+<p>In order to evaluate and compare the reversal properties
+of different BPM systems, which can have different average
+island coercivity (i.e., average island switching field), it is
+useful to consider iSFD normalized to the coercivity,
+i.e., $iSFD/H_{C}$, as a figure of merit.
+With prepatterned substrates and
+Co/Pt or Co/Pd multilayers, $SFD/H_{C}$ increases from a ~3%
+for large micrometer-sized islands to 12%–18% for diameters
+of 30 nm or less. This trend arises from the fact that as islands
+become smaller, properties are averaged over less magnetic
+material.
+In order to lower $SFD/H_{C}$, alternative magnetic structures
+were investigated, including exchange spring and exchange-
+coupled composite magnetic multilayer systems. such heterogeneous magnetic structures decreased
+$SFD/H_{C}$ from &gt;11% to 7.5%.</p>
+<p>### Magnetic Materials for High Areal Density</p>
+<p>For ADs beyond $1.2 Td/in^{2}$, additional media layer improvements
+were implemented to keep $iSFD/H_{C}$ below 10%.</p>
+<p>$H_{C}$ decreases and iSFD
+broadens with decreasing film thickness, leading to unaccept-
+able $iSFD/H_{C}$ values of ~20% for 4 nm thick
+layers. The thermal stability ratio decreases from 150 for 8 nm
+media down to 50 at 4 nm. In order to compensate for the loss
+in magnetic volume and the decrease of the perpendicular
+anisotropy density with thinner recording layers, a natural
+approach is to vary the alloy composition and, in particular,
+employ alloys with higher Pt content and therefore higher
+$K_{U}$. However, BPM made of such alloys usually exhibits
+broader iSFD, which may be caused by an increase in stacking fault density and other defects in
+high-Pt-content cobalt
+alloys.</p>
+<p>A magnetic stack combining a hard magnetic layer and a
+softer magnetic layer that are strongly exchange coupled was
+also evaluated.
+In this composite system, the hard magnetic layer provides an
+increase of the overall perpendicular anisotropy density, while
+the softer magnetic layer keeps the effective iSFD value
+low. A study of $H_{C}$ and iSFD as a function of
+the thickness ratio of the hard and soft magnetic layers, where
+the total magnetic layer thickness was kept constant,
+showed a linear increase of $H_{C}$ with the thickness ratio.</p>
+<p>### Magnetic Materials for Templated Growth</p>
+<p>Templated growth (TG) provides an alternative means to
+generate ultrahigh-density BPM. In TG BPM, nucleation sites
+with the desired pattern are generated by nanolithographic
+patterning. A sequence of underlayers, magnetic layers, and
+overcoat layers are then deposited on the nucleation features.</p>
+<p>The magnetic layers can consist of cosputtered magnetic alloy
+and oxide segregants to obtain a periodic array of magnetic
+islands in a matrix of oxides</p>
+<p>In order for TG BPM to obtain the best recording media
+properties, it is desirable to start with nucleation features
+with consistent size, shape, and surface conformation.</p>
+<p>![Templated Growth](Img/Fig02.png)
+<em>(a) TEM cross section TG BPR media (b) Plan-view SEM image</em></p>
+<p>Rather than choosing to grow on an amorphous nucleation
+feature, if a nucleation feature with a preferred crystallographic
+orientation is used, better orientation of grains (with
+correspondingly better structural and magnetic properties) can
+be obtained.</p>
+<p>Because TG BPM generally has a higher
+fill factor than etched media, we find that eTG media can
+have a higher coercivity and thermal stability factor. So far,
+TG BPM has a wider SFD than conventional etched BPM,
+possibly due to variations in the nucleation features that are
+reflected in magnetic variations from island to island. As a
+consequence, recording performance of TG BPR media is
+not as good as etched media, and further optimization of
+the nucleation features, growth conditions, layer structure, and
+materials composition are needed in order to achieve the full
+potential of eTG media.</p>
+<p>![Hysteresis TG](Img/Fig03.png)
+<em>Magnetic hysteresis loop of an epitaxial grown TG BPM with a density of $1 Td/in^2$</em></p>
+<p>TG BPM has the potential of reaching much higher AD
+without facing the scaling challenges associated with etching.
+Therefore, TG BPM is a promising candidate for ultrahigh
+density bit-patterned recording media.</p>
+<p>—</p>
+<p>## Media Fabrication</p>
+<p>Fabrication of BPM diverges significantly from nanofabri-
+cation processes practiced by the semiconductor industry for
+multiple reasons.
+1) The sizes of BPM features (generally $&lt;20 nm$ full pitch
+in the down-track direction) are beyond the capability
+of conventional lithographic methods.
+2) BPM requires single-shot full-disk lithography to avoid
+stitching errors.
+3) BPM patterns are circular in nature and are highly
+periodic.
+4) Cost targets are much lower and total area to be
+patterned is much larger than for semiconductors.
+5) BPMR can tolerate a relatively high defect rate
+($~10^{-3}$ defective islands).</p>
+<p>![Fabrication](Img/Fig04.png)
+<em>(a) Process flow for fabrication of the master template, working templates, and BPM disks. (b) Two-generation nanoimprint strategy for duplicating the pattern from a single master template via replicated working templates to a large number of disks</em></p>
+<p>![Pattern](Img/Fig05.png)
+<em>(c) Complete master pattern is formed by intersecting (a) zoned radial line pattern and (b) circumferential track pattern.</em></p>
+<p>### Rotary-Stage e-Beam Litography</p>
+<p>In order to be able to generate complicated patterns, such
+as bit patterns or HDD servo areas, a rotary EBL tool incor-
+porates a formatting unit. The formatter generates deflection
+and blanking signals for the beam within each written band.
+The parameter data for each sector in a band are sent to the
+formatter in real time, and therefore there is no need to store
+massive amounts of pattern data as it would be the case for
+an X–Y EBL system.</p>
+<p>### Directed Self-Assembly of Block Copolymers</p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>Introduction to Self-Assembly for BPM:</dt>
+<dd>Because sub-10 nm lithography</dd>
+</dl>
+</li>
+</ol>
+<p>is not available by any conventional lithographic technique,
+BCP lithography has evolved as an organic part of the
+BPM patterning solution not only because of the ability of
+BCPs to form sublithographic features, but also because of
+their flexibility to comply with other important BPM design
+requirements such as conforming to zoned periodic features
+on circular tracks at constant angular pitch.</p>
+<ol class="arabic simple" start="2">
+<li><dl class="first docutils">
+<dt>Patterning With PS-PMMA From 41 to 22 nm Pitch:</dt>
+<dd>To do …</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Patterning Below 22 nm Pitch (BCP+SADP):</dt>
+<dd>To do …</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Patterning Below 22 nm Pitch (Higher $chi$ BCPs):</dt>
+<dd>To do …</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Design Requirements for Self-Assembled Patterns:</dt>
+<dd>To do …
+- Pitch flexibility
+- Defect density
+- Skew angle
+- Compatibility with servo patterns
+- Line roughness
+- Pattern Transfer of BCP DSA Patterns</dd>
+</dl>
+</li>
+</ol>
+<p>### Self-Aligned Double Patterning (SADP)</p>
+<p>SADP is a technique used by the semiconductor industry
+to double the density of an existing prepattern.</p>
+<p>There are three major unique features in our SADP for BPM:
+1. our prepattern is created using DSA of BCP.</p>
+<p>2. SADP is performed on circumferential or radial line arrays instead of
+straight lines.</p>
+<ol class="arabic simple" start="3">
+<li>SADP is used to pattern a nanoimprint template instead of active devices.</li>
+</ol>
+<p>![SADP](Img/Fig06.png)
+<em>Line doubling process flow with DSA. (a) DSA BCP lines. (b) Etched carbon lines with line width control. (c) Conformal spacer deposition. (d) Anisotropic spacer etch back. (e) Mandrel removal. (f) Transfer into substrate.</em></p>
+<p>### Integration of Servo Patterns</p>
+<p>When a disk drive reads or writes data on a recording
+medium (including BPM), it needs position information in
+both the disk radial and circumferential directions. This is
+provided by servo patterns on the disk.
+Servo patterns consist of several
+magnetic sequences, including track number, sector number,
+and subtrack position reference pattern (usually called a burst
+pattern).
+BPM offers the possibility of eliminating conventional
+servowriting by creating physical servo patterns of magnetic
+islands along with data islands. One way to accomplish this
+is to fabricate a master template that contains both servo and
+data patterns, and imprint this on each disk.</p>
+<p>![Servo/data-integration process](Img/Fig07.png)
+<em>Servo/data-integration process. (a) Circumferential submaster after
+protective layer $1$ deposition. (b) Data area protected with photoresist.
+(c) Servo patterns exposed using wet etch. (d) Alumina deposition by ALD.
+(e) Alumina etched to produce tone-reversed servo pattern. (f) Servo pattern
+etched into silicon. (g) Deposition of protective layer $2$. (h) Data area
+DSA guiding patterns retrieved by liftoff and wet etch.</em></p>
+<p>### Pattern Transfer in Fabrication of Imprint Templates</p>
+<p>High-volume manufacturing of BPM via nanoimprint
+lithography requires robust master or submaster templates that
+can be used thousands of times without degradation while
+withstanding occasional cleaning to remove built-up organic
+residues or contaminants. One route to achieving this is to
+transfer patterns directly into the substrate onto which the
+patterns are primarily formed. This is, however, a formidable
+challenge at the dimensions required for BPM, especially in
+the case of SADP.</p>
+<p>Our nanoimprint template fabrication strategy has under-
+gone two major transitions</p>
+<ol class="arabic simple">
+<li>hexagonal island arrays to rectangular, or high BAR arrays.</li>
+<li>hole-tone to pillar tone.</li>
+</ol>
+<p>After the fabrication of a BPM master template, it needs to
+be replicated to multiple working templates for high-volume
+manufacturing of disks using nanoimprinting. The template
+replication is done by imprinting the master template pattern
+into nanoimprint resist on working template substrates.</p>
+<p>### Nanoimprint Litography</p>
+<p>Nanoimprint lithography is the preferred technology for low-cost high-volume replication
+of BPM patterns,
+because of its extendibility to single-digit nanometer-scale
+feature size and its ability to replicate full disk patterns without
+stitching. Nanoimprinting was first developed specifically as a
+solution for fabrication of BPM.</p>
+<ol class="arabic">
+<li><p class="first">UV Cure Ink Jet Dispense Nanoimprinting Process:</p>
+<blockquote>
+<div><p>![UV-cure](Img/Fig08.png)
+<a href="#id1"><span class="problematic" id="id2">*</span></a>UV-cure nanoimprinting process steps. (a) Resist dispensing.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>(b) Conformal contact of the disk and template, resist spreading, and
+UV curing. (c) Separation of the disk and template.*</p>
+<ol class="arabic simple" start="2">
+<li><dl class="first docutils">
+<dt>Normal Tone Versus Reverse Tone Imprinting:</dt>
+<dd>Nanoimprinting is similar to a molding process in that the topographic</dd>
+</dl>
+</li>
+</ol>
+<p>pattern in the resist is a negative tone image of the template
+pattern. To make use of the resist image for pattern transfer
+to another layer (such as the magnetic layer of BPM), there
+are two choices:</p>
+<blockquote>
+<div><ul class="simple">
+<li>a normal tone process, in which the resist</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>itself is used as an etch mask and</dt>
+<dd><ul class="first last simple">
+<li>a reverse tone process, in which depressions in the resist are backfilled with another</li>
+</ul>
+</dd>
+<dt>material that serves as the etch mask for pattern transfer</dt>
+<dd>![NormalTone/ReverseTone](Img/Fig09.png)
+Although the terminology can be confusing, it is</dd>
+</dl>
+<p>important to note that normal tone produces a negative image
+of the template features, and reverse tone produces a positive
+image.</p>
+<ol class="arabic" start="3">
+<li><p class="first">Defects in Nanoimprinting</p>
+<blockquote>
+<div><p>![Typical defects](Img/Fig10.png)
+<em>Typical defects in nanoimprinting. (a) Nonfilled features in a
+$300 Gd/in^{2}$ pattern with a hole tone template. (b) Nonfilled features in
+a $300 Gd/in^{2}$ pattern with a pillar-tone template. (c) Fractured pillars.
+(d) Fractured pillars lodged in $300 Gd/in^{2}$ template holes. (e) Full disk view
+with a large centimeter-size tent defect caused by large airborne particle.
+(f) Tent defect with particle visible at center of tent.</em></p>
+</div></blockquote>
+</li>
+</ol>
+<p>### Media Pattern Transfer</p>
+<ol class="arabic simple">
+<li>Media Etch Mask Preparation</li>
+<li>Magnetic Dot Pattern Transfer by Etching</li>
+<li>Vacuum Planarization</li>
+</ol>
+<p>### Alternative Patterne Transfer: Templated Growth</p>
+<p>### Alternative Patterne Transfer: Ion Implantation</p>
+<p>—</p>
+<p>## Recording System Integration</p>
+<p>Many components work in tandem in the drive to store and
+retrieve data with high fidelity. On the component side, there
+are the read/write head and the media components. Closely
+tied to these is the HDI. On the system side, there are the
+servo/mechanical, read channel, write synchronization, front
+end electronics subsystems, data architecture, and firmware.
+The integration of all of these systems into a functioning
+drive requires a careful awareness of the specifications of each
+system and the interactions between the various systems in
+order to arrive at a detailed balance that can meet customer
+requirements</p>
+<p>### Head-Disk Interface</p>
+<p>Some of the tribological challenges expected to be aggravated by the rougher BPM surface include the following:</p>
+<ol class="arabic simple">
+<li>higher disk defect and asperity densities;</li>
+<li>poorer contact detection and clearance control for  recording heads flying over the disk surface;</li>
+</ol>
+<p>3. higher average flying heights and spacing modulations
+of the recording head;
+4. poorer robustness of the BPM islands toward head-disk
+contacts;
+5. increased tendency for corrosion.</p>
+<p>A potential way to solve the problems associated with
+the patterned topography of BPM is to planarize the BPM
+disk surface</p>
+<p>The impacts and tribological challenges that using unplanarized and partially planarized BPM disks can have on the performance of the HDI can be</p>
+<ol class="arabic simple">
+<li>Head-Media Spacing (HMS)</li>
+<li><dl class="first docutils">
+<dt>Contact Detection on BPM</dt>
+<dd><ul class="first last">
+<li>Unplanarized media</li>
+<li>Partially planarized media</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Flying Height and Modulation of HMS</li>
+</ol>
+<p>### Servo and Servo Patterns</p>
+<ol class="arabic simple">
+<li>Self-Registered Servo</li>
+<li>Nonregistered Servo</li>
+</ol>
+<p>### Write Synchronization</p>
+<ol class="arabic simple">
+<li>Zoning and Frequency RRO</li>
+<li>Write Clock PLL</li>
+</ol>
+<p>### Recording System Modeling</p>
+<p>### Effect of Servo Fluctuations</p>
+<p>—</p>
+<p>## BPM Recording Experiments at $1.6 frac{Td}{in^{2}}$</p>
+<p>—</p>
+<p>## Extendibility</p>
+<p>### Extendibility Assesment Framework</p>
+<p>### Island Tolerances and AD</p>
+<p>### Thermal Stability and Writeability Limits</p>
+<p>—</p>
+<p>## Abbreviations</p>
+<p>AD -&gt; areal density</p>
+<p>AE -&gt; acoustic emission</p>
+<p>ALD -&gt; atomic layer deposition</p>
+<p>BCP -&gt; block copolymer
+BAR -&gt; bit aspect ratio
+BER -&gt; bit error rate
+BPM -&gt; bit-patterned media
+BPR -&gt; ?
+BPMR -&gt; bit-patterned magnetic recording
+DSA -&gt; directed self-assembly
+EBL -&gt; electron-beam lithography
+ECC -&gt; error correcting code
+FM -&gt; fill mask
+HAMR -&gt; heat-assited magnetic recording
+HDD -&gt; hard disk drive
+HDI -&gt; head-disk interface
+HMS -&gt; head-media spacing
+HTMR -&gt; hypertrack magnetic recording (Two or more tracks are read/writen in one pass)
+ICP -&gt; inductively  coupled plasma
+IBE -&gt; ion beam etching
+LER -&gt; line edge roughness
+MWW -&gt; magnetic write width
+PES -&gt; position error signal
+PLL -&gt; phase looked loop
+PMR -&gt; perpendicular magnetic recording
+ROO -&gt; repetitive runout
+RIE -&gt; reactive ion etching
+SADP -&gt; self-aligned double patterning
+SFD -&gt; switching field distribution
+iSFD -&gt; intrinsec SFD
+SFR -&gt; sector failure rate
+SMR -&gt; shingled magnetic recording
+SNR -&gt; signal-to-noise ratio
+TFC -&gt; thermal flying height control
+TG -&gt; templated growth
+eTG -&gt; epitaxial TG
+TMR -&gt; track misregistration
+TP -&gt; track pitch (Separation between the centers of two adjacent tracks ~20nm)</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="graphs.html" title="previous chapter">Graphs Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Juan Henao.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/bpm_articles.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
